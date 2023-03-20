@@ -8,7 +8,7 @@ SELECT
 FROM
     order_info;
     
--- 3. 매출 비교 분석
+-- 3. 매출 비교 분석 ???????????????????????????????????ㅍ
 SELECT
     count(*) 총주문건,
     SUM(sales) 총매출합계,
@@ -37,9 +37,90 @@ ORDER BY
 
 -- 5. 월별상품 매출 분석 (시계열 분석)
 SELECT
-    substr(reserv_date,1,6) 년월
+    substr(r.reserv_date,1,6) 년월,
+    sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) special_set,
+    sum(DECODE(i.product_name, 'PASTA', o.sales,0)) PASTA,
+    sum(DECODE(i.product_name, 'PIZZA', o.sales,0)) PIZZA,
+    sum(DECODE(i.product_name, 'SEA_FOOD', o.sales,0)) SEA_FOOD,
+    sum(DECODE(i.product_name, 'SALAD_BAR', o.sales,0)) SALAD_BAR,
+    sum(DECODE(i.product_name, 'SALAD', o.sales,0)) SALAD,
+    sum(DECODE(i.product_name, 'SANDWITCH', o.sales,0)) SANDWITCH,
+    sum(DECODE(i.product_name, 'WINE', o.sales,0)) WINE,
+    sum(DECODE(i.product_name, 'JUICE', o.sales,0)) JUICE,
+    sum(DECODE(i.product_name, 'STAKE', o.sales,0)) STAKE
 FROM
-    reservation
+    reservation r 
+JOIN order_info o
+ON 
+    r.reserv_no = o.reserv_no
+JOIN item i
+ON
+    o.item_id = i.item_id
 GROUP BY
-    substr(reserv_date,1,6)
+    substr(r.reserv_date,1,6)
+ORDER BY
+    substr(r.reserv_date,1,6)
+;
+
+
+-- 6. 월별 총 매출, 전용 상품 매출 비교 분석
+SELECT
+    substr(r.reserv_date,1,6) 년월,
+    sum(sales) 매출합계, 
+    sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) special_set
+FROM
+    reservation r 
+JOIN order_info o
+ON 
+    r.reserv_no = o.reserv_no
+JOIN item i
+ON
+    o.item_id = i.item_id
+GROUP BY
+    substr(r.reserv_date,1,6)
+ORDER BY
+    substr(r.reserv_date,1,6)
+;
+
+-- 7 매출 기여율
+SELECT
+    substr(r.reserv_date,1,6) 년월,
+    sum(sales) - sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) ETC, 
+    sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) special_set,
+    round(sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) / sum(sales) * 100,1) 매출기여율
+FROM
+    reservation r 
+JOIN order_info o
+ON 
+    r.reserv_no = o.reserv_no
+JOIN item i
+ON
+    o.item_id = i.item_id
+GROUP BY
+    substr(r.reserv_date,1,6)
+ORDER BY
+    substr(r.reserv_date,1,6)
+;
+
+-- 8 예약 완료 취소건 분석
+SELECT
+    substr(r.reserv_date,1,6) 년월,
+    sum(sales) - sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) ETC, 
+    sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) special_set,
+    round(sum(DECODE(i.product_name, 'SPECIAL_SET', o.sales,0)) / sum(sales) * 100,1) 매출기여율,
+    count(*) 총주문건,
+    count(*) 예약완료건,
+    SUM(DECODE(r.cancel, 'Y', 1, 0)) 예약취소건
+FROM
+    reservation r 
+JOIN order_info o
+ON 
+    r.reserv_no = o.reserv_no
+JOIN item i
+ONC
+    o.item_id = i.item_id
+GROUP BY
+    substr(r.reserv_date,1,6)
+ORDER BY
+    substr(r.reserv_date,1,6)
 ;
