@@ -62,14 +62,14 @@ public class Account {
 			
 			r = pstmt.executeUpdate();
 			
-			if(r>0) System.out.println("ê²°ê³¼: ê³„ì¢Œê°€ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			if(r>0) System.out.println("°á°ú: °èÁÂ°¡ »ı¼ºµÇ¾ú½À´Ï´Ù.");
 			
 		} catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			//í•´ì§€ëŠ” ì—­ìˆœìœ¼ë¡œ ~ ìš”ì¦˜ì€ ìƒê´€ì—†ëŒ€..
+			//ÇØÁö´Â ¿ª¼øÀ¸·Î ~ ¿äÁòÀº »ó°ü¾ø´ë..
 			if(pstmt != null) {try {pstmt.close();} catch (SQLException e) {}}
 			if(conn != null) {try {conn.close();} catch (SQLException e) {}}
 		}
@@ -82,29 +82,29 @@ public class Account {
 		ResultSet rs = null;
 		
 		try {
-			// 1. ë“œë¼ì´ë²„ ë¡œë“œ
+			// 1. µå¶óÀÌ¹ö ·Îµå
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// 2. DB ì ‘ì†
+			// 2. DB Á¢¼Ó
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank",
 					"root",
 					"root1234"
 					);
-			//3. statement ê°ì²´ ìƒì„±
+			//3. statement °´Ã¼ »ı¼º
 			stmt = conn.createStatement();
 			
 			
 //			PreparedStatement pstmt = conn.prepareStatement(sql);
 			
-			// 4. sql ì‹¤í–‰(ì²˜ë¦¬)
+			// 4. sql ½ÇÇà(Ã³¸®)
 			//select -> executeQuery
 			//insert/update/delete => executeUpdate
 			
 			String sql = "SELECT * FROM account";
 			rs = stmt.executeQuery(sql);
 			
-			//5. ê²°ê³¼ì²˜ë¦¬
+			//5. °á°úÃ³¸®
 			while(rs.next()) {
 				System.out.print(rs.getString("account_number") + "\t");
 				System.out.print(rs.getString("account_balance") + "\t");
@@ -115,7 +115,7 @@ public class Account {
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			//í•´ì§€ëŠ” ì—­ìˆœìœ¼ë¡œ ~ ìš”ì¦˜ì€ ìƒê´€ì—†ëŒ€..
+			//ÇØÁö´Â ¿ª¼øÀ¸·Î ~ ¿äÁòÀº »ó°ü¾ø´ë..
 			if(rs != null) {try {rs.close();} catch (SQLException e) {}
 			if(stmt != null) {try {stmt.close();} catch (SQLException e) {}}
 			if(conn != null) {try {conn.close();} catch (SQLException e) {}}
@@ -129,37 +129,37 @@ public class Account {
 		int r = 0;
 		
 		try {
-			// 1. ë“œë¼ì´ë²„ ë¡œë“œ
+			// 1. µå¶óÀÌ¹ö ·Îµå
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// 2. DB ì ‘ì†
+			// 2. DB Á¢¼Ó
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank",
 					"root",
 					"root1234"
 					);
-			//3. statement ê°ì²´ ìƒì„±
+			//3. statement °´Ã¼ »ı¼º
 			String sql = "UPDATE account SET account_balance =account_balance + ? WHERE account_number = ?";
 			pstmt = conn.prepareStatement(sql);
 			
 			
 //			PreparedStatement pstmt = conn.prepareStatement(sql);
 			
-			// 4. sql ì‹¤í–‰(ì²˜ë¦¬)
+			// 4. sql ½ÇÇà(Ã³¸®)
 			//select -> executeQuery
 			//insert/update/delete => executeUpdate
 			
 			pstmt.setInt(1, account_balance);
 			pstmt.setString(2, account_number);
 			r = pstmt.executeUpdate();
-			//5. ê²°ê³¼ì²˜ë¦¬
-			if(r>0) System.out.println("ì •ìƒì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			//5. °á°úÃ³¸®
+			if(r>0) System.out.println("Á¤»óÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
 		} catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			//í•´ì§€ëŠ” ì—­ìˆœìœ¼ë¡œ ~ ìš”ì¦˜ì€ ìƒê´€ì—†ëŒ€..
+			//ÇØÁö´Â ¿ª¼øÀ¸·Î ~ ¿äÁòÀº »ó°ü¾ø´ë..
 			if(pstmt != null) {try {pstmt.close();} catch (SQLException e) {}}
 			if(conn != null) {try {conn.close();} catch (SQLException e) {}}
 			}
@@ -172,37 +172,37 @@ public class Account {
 		int r = 0;
 		
 		try {
-			// 1. ë“œë¼ì´ë²„ ë¡œë“œ
+			// 1. µå¶óÀÌ¹ö ·Îµå
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			// 2. DB ì ‘ì†
+			// 2. DB Á¢¼Ó
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/bank",
 					"root",
 					"root1234"
 					);
-			//3. statement ê°ì²´ ìƒì„±
+			//3. statement °´Ã¼ »ı¼º
 			String sql = "UPDATE account SET account_balance = account_balance - ? WHERE account_number = ?";
 			pstmt = conn.prepareStatement(sql);
 			
 			
 //			PreparedStatement pstmt = conn.prepareStatement(sql);
 			
-			// 4. sql ì‹¤í–‰(ì²˜ë¦¬)
+			// 4. sql ½ÇÇà(Ã³¸®)
 			//select -> executeQuery
 			//insert/update/delete => executeUpdate
 			
 			pstmt.setInt(1, account_balance);
 			pstmt.setString(2, account_number);
 			r = pstmt.executeUpdate();
-			//5. ê²°ê³¼ì²˜ë¦¬
-			if(r>0) System.out.println("ì •ìƒì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			//5. °á°úÃ³¸®
+			if(r>0) System.out.println("Á¤»óÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
 		} catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			//í•´ì§€ëŠ” ì—­ìˆœìœ¼ë¡œ ~ ìš”ì¦˜ì€ ìƒê´€ì—†ëŒ€..
+			//ÇØÁö´Â ¿ª¼øÀ¸·Î ~ ¿äÁòÀº »ó°ü¾ø´ë..
 			if(pstmt != null) {try {pstmt.close();} catch (SQLException e) {}}
 			if(conn != null) {try {conn.close();} catch (SQLException e) {}}
 			}

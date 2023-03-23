@@ -1,0 +1,63 @@
+.container, .container2{
+    width: 1200px;
+    margin: 20px auto;
+}
+
+.container >* {
+}
+
+.header {
+    height: 120px;
+    width: 1200px;
+    background-color: rgb(243, 176, 232);
+}
+
+.sidebar {
+    background-color: rgb(151, 151, 209);
+    float: left;
+    height: 600px;
+    width: 300px;
+}
+.content {
+    background-color: rgb(245, 130, 193);
+    float: right;
+    height: 600px;
+    width: 900px;
+}
+.footer{
+    width: 1200px;
+    height: 100px;
+    background-color: rgb(209, 137, 238);
+    clear: left; /* 플로팅해제 !!!!*/
+}
+
+.container2 > .header {
+    height: 120px;
+    width: 1200px;
+    background-color: rgb(243, 176, 232);
+}
+
+.container2 > .sidebar1 {
+    background-color: rgb(151, 151, 209);
+    float: left;
+    height: 600px;
+    width: 300px;
+}
+.container2 > .sidebar2 {
+    background-color: rgb(151, 151, 209);
+    float: right;
+    height: 600px;
+    width: 300px;
+}
+.container2 > .content {
+    background-color: rgb(245, 130, 193);
+    float: left;
+    height: 600px;
+    width: 600px;
+}
+.container2 > .footer{
+    width: 1200px;
+    height: 100px;
+    background-color: rgb(209, 137, 238);
+    clear: left; /* 플로팅해제 !!!!*/
+}

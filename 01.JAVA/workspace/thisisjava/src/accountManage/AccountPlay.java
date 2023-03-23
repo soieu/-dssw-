@@ -16,25 +16,25 @@ public class AccountPlay {
 		while(true)
 		{
 			System.out.println("-------------------------------------------");
-			System.out.println("1.ê³„ì¢Œìƒì„±|2.ê³„ì¢Œëª©ë¡|3.ì˜ˆê¸ˆ|4.ì¶œê¸ˆ|5.ì¢…ë£Œ");
+			System.out.println("1.°èÁÂ»ı¼º|2.°èÁÂ¸ñ·Ï|3.¿¹±İ|4.Ãâ±İ|5.Á¾·á");
 			System.out.println("-------------------------------------------");
-			System.out.print("ì„ íƒ>");
+			System.out.print("¼±ÅÃ>");
 			
 			input = scan.nextLine();
 			
 			if("1".equals(input))
 			{
 				System.out.println("-----------");
-				System.out.println("1.ê³„ì¢Œìƒì„±");
+				System.out.println("1.°èÁÂ»ı¼º");
 				System.out.println("-----------");
 				
-				System.out.print("ê³„ì¢Œë²ˆí˜¸: ");
+				System.out.print("°èÁÂ¹øÈ£: ");
 				account_number = scan.nextLine();
 				
-				System.out.print("ê³„ì¢Œì£¼: ");
+				System.out.print("°èÁÂÁÖ: ");
 				account_master = scan.nextLine();
 				
-				System.out.print("ì´ˆê¸°ì…ê¸ˆì•¡: ");
+				System.out.print("ÃÊ±âÀÔ±İ¾×: ");
 				account_balance = Integer.parseInt(scan.nextLine());
 				
 				Account new_ac = new Account();
@@ -46,7 +46,7 @@ public class AccountPlay {
 			else if("2".equals(input))
 			{
 				System.out.println("-----------");
-				System.out.println("2.ê³„ì¢Œëª©ë¡");
+				System.out.println("2.°èÁÂ¸ñ·Ï");
 				System.out.println("-----------");
 				ac.printAccount();
 				
@@ -54,13 +54,13 @@ public class AccountPlay {
 			else if("3".equals(input))
 			{
 				System.out.println("-----------");
-				System.out.println("3.ì˜ˆê¸ˆ");
+				System.out.println("3.¿¹±İ");
 				System.out.println("-----------");
 				
-				System.out.print("ê³„ì¢Œë²ˆí˜¸: ");
+				System.out.print("°èÁÂ¹øÈ£: ");
 				account_number = scan.nextLine();
 				
-				System.out.print("ì˜ˆê¸ˆì•¡: ");
+				System.out.print("¿¹±İ¾×: ");
 				account_balance = Integer.parseInt(scan.nextLine());
 				
 				ac.plusAccount(account_number, account_balance);
@@ -68,13 +68,13 @@ public class AccountPlay {
 			else if("4".equals(input))
 			{
 				System.out.println("-----------");
-				System.out.println("4.ì¶œê¸ˆ");
+				System.out.println("4.Ãâ±İ");
 				System.out.println("-----------");
 				
-				System.out.print("ê³„ì¢Œë²ˆí˜¸: ");
+				System.out.print("°èÁÂ¹øÈ£: ");
 				account_number = scan.nextLine();
 				
-				System.out.print("ì¶œê¸ˆì•¡: ");
+				System.out.print("Ãâ±İ¾×: ");
 				account_balance = Integer.parseInt(scan.nextLine());
 				
 				ac.minusAccount(account_number, account_balance);

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>table,
+        td {
+            border: 1px solid #333;
+        }
+        
+        thead,
+        tfoot {
+            background-color: #333;
+            color: #fff;
+        }</style>
+  </head>
+  <body>
+    <h1>블럭과 인라인</h1>
+    <div>블럭1</div>
+    dddddd
+    <div style="display: inline">ddd</div>
+    <div>블럭2</div>
+    <span>스판스판</span>
+    <span>spanspanspa&nbsp;&nbsp;&nbsp;nspanspanspanspanspanspan</span>
+    <div>블럭3</div>
+    <h1>리스트</h1>
+    <ol>
+      <li>힝</li>
+      <li>힝</li>
+      <li>힝</li>
+    </ol>
+    <h1>dl과 dt와 dd</h1>
+    <dl>
+      <dt>이름</dt>
+      <dd>값</dd>
+    </dl>
+    <h1>테이블</h1>
+    <table border="1">
+        <caption>선물용과 가정용 상품 구성</caption>
+        <colgroup>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>35,000원</td>
+            </tr>
+            <thead>
+                <tr>
+                    <th>용도</th>
+                    <th>중량</th>
+                    <th>개수</th>
+                    <th>가격</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>선물용</td>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+            </tr>
+            <tr>
+                <td>가정용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>30,000원</td>
+            </tr>
+            <tr>
+                <td>가정용</td>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>47,000원</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1">
+        <caption>선물용과 가정용 상품 구성</caption>
+        <colgroup>
+            <col style="background-color: red">
+            <col>
+            <col>
+            <col>
+        </colgroup>
+            <tr>
+                <th>용도</th>
+                <th>중량</th>
+                <th>개수</th>
+                <th>가격</th>
+            </tr>
+            <tr>
+                <td rowspan="2">선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>35,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+            </tr>
+            <tr>
+                <td rowspan="2">가정용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>30,000원</td>
+            </tr>
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>47,000원</td>
+            </tr>
+            <h1>비디오</h1>
+            <video poster controls src ="../00.etc/test.mp4" width="700"></video>
+    </table>
+    <h1>폼</h1>
+    <form method="GET">
+        <label>아이디: 
+            <input type="text" name="id">
+        </label>
+        <input type="submit" value="save">
+        <label for="user-id">아이디</label>
+        <input type="text" id="user-id">
+        <input type="submit" value="save">
+    </form>
+    <h1>iframe</h1>
+        <iframe src="http://daum.net" width="500" height="500"></iframe>
+        <iframe src="https://www.youtube.com/watch?v=O5RI6imh_xQ" width="500" height="500"></iframe>
+  </body>
+</html>
