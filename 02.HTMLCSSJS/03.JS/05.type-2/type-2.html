@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function total() {
+				var price1 = Number(document.querySelector("#price1").value);
+				var price2 = Number(document.querySelector("#price2").value);
+				var price3 = price1 + price2;
+
+				document.querySelector("#price3").value = price3;
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>2023-03-26</td>
+				<td><input type="text" id="price1" /></td>
+			</tr>
+			<tr>
+				<td>2023-03-27</td>
+				<td><input type="text" id="price2" /></td>
+			</tr>
+			<tr>
+				<td>합계</td>
+				<td><input type="text" id="price3" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="합계" onclick="total();" />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

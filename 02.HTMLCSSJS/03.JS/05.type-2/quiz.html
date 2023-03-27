@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function ntoh() {
+				var num = Number(document.querySelector("#num").value);
+				var result = null;
+				var ten = null;
+				var ill = null;
+				if ((num - (num % 10)) / 10 === 1) ten = "십";
+				else if ((num - (num % 10)) / 10 === 2) ten = "이십";
+				else if ((num - (num % 10)) / 10 === 3) ten = "삼십";
+				else if ((num - (num % 10)) / 10 === 4) ten = "사십";
+				else if ((num - (num % 10)) / 10 === 5) ten = "오십";
+				else if ((num - (num % 10)) / 10 === 6) ten = "육십";
+				else if ((num - (num % 10)) / 10 === 7) ten = "칠십";
+				else if ((num - (num % 10)) / 10 === 8) ten = "팔십";
+				else if ((num - (num % 10)) / 10 === 9) ten = "구십";
+				if (num % 10 === 1) ill = "일";
+				else if (num % 10 === 2) ill = "이";
+				else if (num % 10 === 3) ill = "삼";
+				else if (num % 10 === 4) ill = "사";
+				else if (num % 10 === 5) ill = "오";
+				else if (num % 10 === 6) ill = "육";
+				else if (num % 10 === 7) ill = "칠";
+				else if (num % 10 === 8) ill = "팔";
+				else if (num % 10 === 9) ill = "구";
+				document.querySelector("#result").value = ten + ill;
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>두자리정수 입력하세요</td>
+				<td><input type="text" id="num" /></td>
+			</tr>
+			<tr>
+				<td>결과값</td>
+				<td><input type="text" id="result" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" value="결과" onclick="ntoh();" />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
