@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 함수를 선언하는 방법
+
+			// 1. 일반적인 방법
+			function addNumber(a, b) {
+				var sum = a + b;
+				console.log(sum);
+			}
+			//실행(호출, call)
+			addNumber(10, 20);
+
+			// 2. 즉시실행함수표현식. 한번만 사용.  IIFE(Immediately Invokable Function Expression
+			(function text(a) {
+				console.log(a);
+			})("test");
+
+			// 타입확인
+			console.log(typeof addNumber);
+
+			// 3. 유명함수(이름있는 함수), 함수 표현식
+			var abcd = function abcdf() {
+				console.log("abcd");
+			};
+
+			abcd();
+
+			// 3. 익명함수(이름이 없는 함수), 함수 표현식
+			var abc = function () {
+				console.log("abc");
+			};
+
+			abc();
+
+			// 4. 화살표 함수 표현식
+			var def = () => {
+				console.log("def");
+			};
+
+			// 5. 생성기 함수, 생성기 함수 표현식 몰랑... 어려워
+			//function* name([param[, param[, ... param]]]) {
+			//       statements
+			//  }
+			// 함수 선언식은 호이스팅에 영향을 받음, 함수 표현식은 호이스팅 영향 안받음
+			// 함수 선언식은 호이스팅의 영향으로 코드 구현 위치와 상관없이 브라우저가 자바스크립트를 해석할 때 민 위로 끌어올려짐
+			def();
+
+			// 가변인자 잘 안씀
+			function sum() {
+				let total = 0;
+				for (let i = 0; i < arguments.length; i++) {
+					total += arguments[i];
+				}
+				console.log(total);
+			}
+			sum(1, 2, 3, 4, 5, 6, 7, 8, 9);
+			function sum(...numbers) {
+				let total = 0;
+				for (let i = 0; i < numbers.length; i++) {
+					total += numbers[i];
+				}
+				console.log(total);
+			}
+			sum(1, 2, 3, 4, 5, 6, 7, 8, 9);
+		</script>
+	</body>
+</html>

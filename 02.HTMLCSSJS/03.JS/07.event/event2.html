@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			window.onload = function () {
+				document.querySelector("#btn").onclick = () => {
+					let cnt = document.querySelector("#cnt").innerHTML;
+					document.querySelector("#cnt").innerHTML = Number(cnt) + 1;
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<button id="btn">추가 버튼</button>
+		버튼클릭횟수 : <span id="cnt">0</span>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function test() {
+				console.log("test");
+			}
+			test();
+
+			function call(func) {
+				func(); // 매개변수 실행
+			}
+
+			// call(test()); // test 함수의 결과값을 call 함수의 매개변수로 전달
+			call(test);
+
+			call(function () {
+				console.log("test2");
+			});
+			call(() => {
+				console.log("test3");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function test() {
+				var text = "안녕";
+				return function () {
+					return text;
+				};
+			}
+			var t = test();
+			console.log(typeof t);
+			console.log(t());
+
+			function test2(name) {
+				var text = "안녕" + name;
+				return function () {
+					return text;
+				};
+			}
+			var t2 = test2("홍길동");
+			var t3 = test2("김길동");
+			console.log(t2());
+			console.log(t3());
+		</script>
+	</body>
+</html>
