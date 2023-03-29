@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="추가" />
+		<div id="org">기존</div>
+		<input type="button" id="btn2" value="행추가" />
+		<table border="1" id="tbl">
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>안녕하세요</td>
+				<td>홍길동</td>
+			</tr>
+		</table>
+		<input type="button" id="btn3" value="이동" />
+		<input type="button" id="btn4" value="복사" />
+		<script>
+			var cnt = 2;
+			$(document).ready(function () {
+				$("#btn").click(function () {
+					$("#org").before("<div>새로운</div>");
+					$("#org").append("<div>새로운</div>");
+					$("<div>새로운</div>").insertAfter("#org");
+				});
+			});
+			$(document).ready(function () {
+				$("#btn2").click(function () {
+					var html = "<tr>";
+					html += "<td>" + cnt++ + "</td>";
+					html += "<td>안녕하세요</td>";
+					html += "<td>홍길동</td>";
+					html += "</tr>";
+					$("#tbl").append(html);
+				});
+				$("#btn3").click(function () {
+					$("#tbl").after($("#org"));
+				});
+				$("#btn4").click(function () {
+					$("#tbl").after($("#org").clone());
+				});
+			});
+		</script>
+	</body>
+</html>

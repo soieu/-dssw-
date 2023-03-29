@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 1000px;
+				margin: 0 auto;
+			}
+			.container div {
+				width: 800px;
+				height: 300px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="google">
+				<img src="../../src/logo.png" />
+			</div>
+		</div>
+		<script>
+			let img = document.querySelector("img");
+			img.onclick = function () {
+				if (img.getAttribute("src") === "../../src/logo.png")
+					img.setAttribute("src", "../../src/naver.png");
+				else img.setAttribute("src", "../../src/logo.png");
+			};
+		</script>
+	</body>
+</html>

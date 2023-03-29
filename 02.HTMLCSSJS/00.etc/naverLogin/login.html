@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 800px;
+				margin: 0 auto;
+			}
+			.logo {
+				text-align: center;
+			}
+			.logo img {
+				width: 40%;
+				margin: 100px auto;
+			}
+			input {
+				border: none;
+				font-size: 30px;
+				font-weight: bold;
+			}
+			.inputdiv {
+				border: 2px solid rgb(216, 216, 216);
+				padding: 30px;
+			}
+			.iddiv {
+				border-radius: 20px 20px 0 0;
+			}
+			.pwddiv {
+				border-radius: 0 0 20px 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo"><img src="../../src/naverloginlogo.png" /></div>
+			<div class="login-form">
+				<div class="inputdiv iddiv">
+					<i class="fa-regular fa-user"></i>
+					<input type="text" id="id" placeholder="아이디" />
+				</div>
+				<div class="inputdiv pwddiv">
+					<i class="fa-solid fa-lock"></i>
+					<input type="password" id="pwd" placeholder="비밀번호" />
+				</div>
+			</div>
+			<div class="login-setting"></div>
+			<div class="login-button"></div>
+			<div class="login-for"></div>
+			<div class="ad"></div>
+			<div class="footer"></div>
+		</div>
+		<script
+			src="https://kit.fontawesome.com/755a2d278e.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

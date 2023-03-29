@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<title>Document</title>
+		<style>
+			.fontColor1 {
+				color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>안녕하세요1</h1>
+		<h1>안녕하세요2</h1>
+		<h1>안녕하세요3</h1>
+		<h1>안녕하세요4</h1>
+		<h1>안녕하세요5</h1>
+		<h2>안안녕하세요6</h2>
+		<img src="../src/whitebird.png" />
+		<script>
+			// $("h1").css("color", "red");
+			// var arr = [1, 2, 3, 4, 5];
+			// $.each(arr, function (i, v) {
+			// 	console.log(i, v);
+			// });
+			$(function () {
+				console.log($("h1"));
+				$("h1").each((i, e) => {
+					console.log(i, e.innerHTML);
+				});
+			});
+			// $("h1").click(function () {
+			// 	$(this).css("color", "yellow");
+			// });
+			$("h1").click(function () {
+				$(this).addClass("fontColor1");
+			});
+			$("h2").css({
+				color: "blue",
+				"font-size": "30px",
+			});
+		</script>
+	</body>
+</html>
