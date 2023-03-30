@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<style></style>
+		<title>Document</title>
+		<script>
+			$(function () {
+				$("#btn").click(function () {
+					$.ajax({
+						url: "http://127.0.0.1:5500/04.jQuery/b.html",
+						data: { id: "hong" },
+						method: "get",
+						dataType: "html",
+						cache: false,
+						success: function (res) {
+							console.log(res);
+							$("#area").html(res);
+						},
+						error: function (e) {
+							console.log(e);
+						},
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" name="btn" value="ajax 호출" />
+		<p></p>
+		<div id="area"></div>
+	</body>
+</html>

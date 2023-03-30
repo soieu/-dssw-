@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<title>Document</title>
+		<script>
+			$(function () {
+				$("#btn").click(function () {
+					$.ajax({
+						url: "board.json",
+						dataType: "json",
+						cache: "false",
+						success: function (res) {
+							$("#tbl").empty();
+							var html = "";
+							html += "<tr>";
+							html += "<th>번호</th>";
+							html += "<th>제목</th>";
+							html += "<th>작성자</th>";
+							html += "<th>작성일</th>";
+							html += "</tr>";
+							$("#tbl").append(html);
+							$.each(res, function (i, v) {
+								$("#tbl").append(
+									"<tr><td>" +
+										v["number"] +
+										"</td><td>" +
+										v["title"] +
+										"</td><td>" +
+										v["writer"] +
+										"</td><td>" +
+										v["date"] +
+										"</td></tr>"
+								);
+							});
+						},
+						error: function (e) {
+							console.log(e);
+						},
+					});
+				});
+				//데이터 없애기
+				$("#d-btn").click(function () {
+					$("#tbl tr").each(function (i, e) {
+						$("#tbl tr").eq(1).remove();
+					});
+				});
+				//데이터 넣기
+				// $("#btn").click(function () {
+				// 	$.ajax({
+				// 		url: "board.json",
+				// 		dataType: "json",
+				// 		cache: "false",
+				// 		success: function (res) {
+				// 			$.each(res, function (i, v) {
+				// 				$("#tbl").append(
+				// 					"<tr><td>" +
+				// 						v["number"] +
+				// 						"</td><td>" +
+				// 						v["title"] +
+				// 						"</td><td>" +
+				// 						v["writer"] +
+				// 						"</td><td>" +
+				// 						v["date"] +
+				// 						"</td></tr>"
+				// 				);
+				// 			});
+				// 		},
+				// 		error: function (e) {
+				// 			console.log(e);
+				// 		},
+				// 	});
+				// });
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="글 가져오기" />
+		<input type="button" id="d-btn" value="글 지우기" />
+		<table border="1" id="tbl">
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+			</tr>
+		</table>
+	</body>
+</html>
