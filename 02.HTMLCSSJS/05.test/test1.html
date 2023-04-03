@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			a {
+				text-decoration: none;
+			}
+			a:visited {
+				color: black;
+			}
+			#container {
+				width: 1200px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#header {
+				background-color: #273443;
+				height: 100px;
+				line-height: 100px;
+				color: white;
+			}
+			#menuContainer {
+				background-color: #ffffff;
+				height: 40px;
+			}
+			#menuContainer ul {
+				list-style-type: none;
+			}
+			#menuContainer > ul > li {
+				float: left;
+				width: 20%;
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid black;
+			}
+			#lcontents {
+				width: 30%;
+				background-color: #f5cfa8;
+				height: 500px;
+				float: left;
+				line-height: 500px;
+			}
+			#content {
+				width: 70%;
+				background-color: #a5c2a7;
+				height: 500px;
+				float: left;
+				line-height: 500px;
+			}
+			#footer {
+				background-color: #d1c3a7;
+				height: 80px;
+				clear: both;
+				line-height: 80px;
+			}
+			ul,
+			li {
+				list-style: none;
+				position: relative;
+			}
+			.depth1 {
+			}
+			.depth2 {
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">header</div>
+			<div id="menuContainer">
+				<ul class="depth1 clear">
+					<li>
+						<a href="#;">MENU1</a>
+						<ul class="depth2">
+							<li><a href="">MENU1_1</a></li>
+							<li><a href="">MENU1_1</a></li>
+							<li><a href="">MENU1_1</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#;">MENU2</a>
+						<ul class="depth2">
+							<li><a href="">MENU2_1</a></li>
+							<li><a href="">MENU2_1</a></li>
+							<li><a href="">MENU2_1</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#;">MENU3</a>
+						<ul class="depth2">
+							<li><a href="">MENU3_3</a></li>
+							<li><a href="">MENU3_3</a></li>
+							<li><a href="">MENU3_3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#;">MENU4</a>
+						<ul class="depth2">
+							<li><a href="">MENU4_4</a></li>
+							<li><a href="">MENU4_4</a></li>
+							<li><a href="">MENU4_4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#;">MENU5</a>
+						<ul class="depth2">
+							<li><a href="">MENU5_5</a></li>
+							<li><a href="">MENU5_5</a></li>
+							<li><a href="">MENU5_5</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div id="lcontents">lcontents</div>
+			<div id="content">content</div>
+			<div id="footer">footer</div>
+		</div>
+		<script>
+			$(function () {
+				$(".depth2").css("display", "none");
+				$("li").hover(
+					function () {
+						$("li:hover > .depth2").css("display", "block");
+					},
+					function () {
+						$("li > .depth2").css("display", "none");
+					}
+				);
+			});
+		</script>
+	</body>
+</html>

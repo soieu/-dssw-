@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/common.js"></script>
+		<script
+			type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3ea7622d3e611699b2324a5cad498f84"
+		></script>
+		<style>
+			.swiper {
+				width: 300px;
+				height: 100px;
+				position: absolute;
+				top: 40px;
+				right: 10px;
+			}
+
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="header">
+				<div class="size">
+					<div>
+						<img class="logo" src="img/logo.png" />
+					</div>
+					<div class="login">
+						<a href="">로그인</a> |
+						<a href="">회원가입</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu">
+				<ul class="depth1">
+					<li>
+						<a href="">MENU1</a>
+						<ul class="depth2">
+							<li><a href="">MENU1-1</a></li>
+							<li><a href="">MENU1-2</a></li>
+							<li><a href="">MENU1-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU2</a>
+						<ul class="depth2">
+							<li><a href="">MENU2-1</a></li>
+							<li><a href="">MENU2-2</a></li>
+							<li><a href="">MENU2-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU3</a>
+						<ul class="depth2">
+							<li><a href="">MENU3-1</a></li>
+							<li><a href="">MENU3-2</a></li>
+							<li><a href="">MENU3-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU4</a>
+						<ul class="depth2">
+							<li><a href="">MENU4-1</a></li>
+							<li><a href="">MENU4-2</a></li>
+							<li><a href="">MENU4-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU5</a>
+						<ul class="depth2">
+							<li><a href="">MENU5-1</a></li>
+							<li><a href="">MENU5-2</a></li>
+							<li><a href="">MENU5-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="sub">
+				<div class="size"></div>
+			</div>
+			<div id="map" style="width: 100%; height: 700px"></div>
+			<script>
+				var container = document.getElementById("map");
+				var options = {
+					center: new kakao.maps.LatLng(33.450701, 126.570667),
+					level: 3,
+				};
+				var map = new kakao.maps.Map(container, options);
+			</script>
+			<div class="footer">
+				<div class="size">
+					<div class="info">
+						<p>신한DS SW아카데미</p>
+						<p>서울시 마포구 월드컵북로 4길 77</p>
+						<p>대표자 박 | 개인정보책임자 이</p>
+						<p>02-1234-5678 | 02-9876-5432</p>
+						<p>사업자번호 123-45-6789</p>
+					</div>
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div
+								class="swiper-slide"
+								style="
+									background-image: url('img/partner_1.png');
+								"
+							></div>
+							<div
+								class="swiper-slide"
+								style="
+									background-image: url('img/partner_2.png');
+								"
+							></div>
+							<div
+								class="swiper-slide"
+								style="
+									background-image: url('img/partner_3.png');
+								"
+							></div>
+							<div
+								class="swiper-slide"
+								style="
+									background-image: url('img/partner_4.png');
+								"
+							></div>
+							<div
+								class="swiper-slide"
+								style="
+									background-image: url('img/partner_5.png');
+								"
+							></div>
+						</div>
+						<div class="swiper-pagination"></div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+					<div class="sns_area">
+						<a href=""><img src="img/blog_ico.png" /></a>
+						<a href=""><img src="img/facebook_ico.png" /></a>
+						<a href=""><img src="img/insta_ico.png" /></a>
+					</div>
+				</div>
+			</div>
+			<script>
+				var swiper = new Swiper(".mySwiper", {
+					cssMode: true,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+					pagination: {
+						el: ".swiper-pagination",
+					},
+					mousewheel: true,
+					keyboard: true,
+					autoplay: {
+						delay: 2000,
+						disableOnInteraction: false,
+					},
+					loop: true,
+				});
+			</script>
+		</div>
+	</body>
+</html>

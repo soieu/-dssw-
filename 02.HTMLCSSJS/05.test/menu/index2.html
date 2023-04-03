@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.wrap {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.header {
+				background-color: #273443;
+				height: 100px;
+				color: #fff;
+				text-align: center;
+				line-height: 100px;
+				margin: 0 auto;
+			}
+			.menu {
+				height: 40px;
+			}
+			.menu > ul > li {
+				list-style: none;
+				width: 20%;
+				border: 1px solid #000000;
+				height: 40px;
+				float: left;
+				text-align: center;
+				line-height: 40px;
+			}
+			.container {
+				overflow: hidden;
+				height: auto;
+			}
+			.lcontents {
+				width: 30%;
+				height: 500px;
+				float: left;
+				background-color: #f5cfa8;
+			}
+			.contents {
+				width: 70%;
+				height: 500px;
+				float: left;
+				background-color: #a5c2a7;
+			}
+			.footer {
+				height: 80px;
+				background-color: #d1c3a7;
+				text-align: center;
+				line-height: 80px;
+			}
+			ul,
+			li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			.depth2 {
+				width: 100%;
+				background-color: #fff;
+				display: none;
+			}
+			.depth2 > li > a,
+			.depth1 > li > a {
+				display: block;
+			}
+		</style>
+		<script>
+			$(function () {
+				$(".depth1 > li")
+					.mouseover(function () {
+						$(this).find(".depth2").stop().slideDown();
+					})
+					.mouseleave(function () {
+						$(this).find(".depth2").stop().slideUp();
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="header">HEADER</div>
+			<div class="menu">
+				<ul class="depth1">
+					<li>
+						<a href="">MENU1</a>
+						<ul class="depth2">
+							<li><a href="">MENU1-1</a></li>
+							<li><a href="">MENU1-2</a></li>
+							<li><a href="">MENU1-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU2</a>
+						<ul class="depth2">
+							<li><a href="">MENU2-1</a></li>
+							<li><a href="">MENU2-2</a></li>
+							<li><a href="">MENU2-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU3</a>
+						<ul class="depth2">
+							<li><a href="">MENU3-1</a></li>
+							<li><a href="">MENU3-2</a></li>
+							<li><a href="">MENU3-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU4</a>
+						<ul class="depth2">
+							<li><a href="">MENU4-1</a></li>
+							<li><a href="">MENU4-2</a></li>
+							<li><a href="">MENU4-3</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">MENU5</a>
+						<ul class="depth2">
+							<li><a href="">MENU5-1</a></li>
+							<li><a href="">MENU5-2</a></li>
+							<li><a href="">MENU5-3</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="visual"></div>
+			<div class="container">
+				<div class="lcontents"></div>
+				<div class="contents"></div>
+			</div>
+			<div class="footer">FOOTER</div>
+		</div>
+	</body>
+</html>
