@@ -3,24 +3,24 @@
 const e = React.createElement;
 
 // 클래스형 from 사이트
-class LikeButton extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = { liked: false };
-	}
+// class LikeButton extends React.Component {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = { liked: false };
+// 	}
 
-	render() {
-		if (this.state.liked) {
-			return "You liked this.";
-		}
+// 	render() {
+// 		if (this.state.liked) {
+// 			return "You liked this.";
+// 		}
 
-		return e(
-			"button",
-			{ onClick: () => this.setState({ liked: true }) },
-			"Like"
-		);
-	}
-}
+// 		return e(
+// 			"button",
+// 			{ onClick: () => this.setState({ liked: true }) },
+// 			"Like"
+// 		);
+// 	}
+// }
 
 // 함수형
 function LikeButton() {
